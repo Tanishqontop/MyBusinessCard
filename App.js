@@ -1,6 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, ScrollView, SafeAreaView, TouchableOpacity, Linking } from 'react-native';
 import { FontAwesome6 } from '@expo/vector-icons';
+import ProjectCard from './components/ProjectCard'; 
+
 
 export default function App() {
   const handlePress = (url) => {
@@ -45,6 +47,16 @@ export default function App() {
             Outside of coding, I enjoy good design, indie tech, and helping founders ship quickly without cutting corners. 
             Let’s build your next big thing.
           </Text>
+
+          <Text style={{ fontWeight: '600' ,fontSize: 22, color: '#000', marginBottom: 20, marginTop: 10 }}>
+            My Projects:
+          </Text>
+         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 10, paddingHorizontal: 20 }}>
+            <ProjectCard title="Habitat" image= {require ('./assets/Project1.png')} />
+            <ProjectCard title="Restate" image= {require ('./assets/Project1.png')} />
+         </ScrollView>
+          
+          
         </View>
       </ScrollView>
     </SafeAreaView>
